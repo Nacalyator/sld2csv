@@ -50,7 +50,7 @@ def prepare_for_csv(header, time, load, deform):
     data.append(['Marking', header['marking']])
     data.append(['Time, ms', 'Load, N', 'Deforamtion, mcm'])
     for i in range(len(time)):
-        data.append([time(i), load(i), deform(i)])
+        data.append([time[i], load[i], deform[i]])
     return data
 
 def save_to_csv(file_path, data):
