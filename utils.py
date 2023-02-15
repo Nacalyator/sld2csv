@@ -54,7 +54,11 @@ def prepare_for_csv(header, time, load, deform):
     return data
 
 def save_to_csv(file_path, data):
-    f = open(file_path, 'w')
-    writer = csv.writer(f)
-    writer.writerows(data)
-    f.close
+    try:
+        f = open(file_path, 'w', newline='')
+        writer = csv.writer(f)
+        writer.writerows(data)
+        f.close
+        return 1
+    except:
+        return -1
